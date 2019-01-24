@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>David Regnault - Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="src/styles/master.scss"/>
+</head>
+<body>
+    <header class="portfolio__header">
+        <nav class="nav">
+            <div class="nav__logo"><a class="nav__logoLink" href="index.html"><img class="nav__logoItem" src="src/img/logo.png" alt="Logo David Regnault"></a></div>
+            <ul class="nav__container">
+                <li class="nav__items nav__items--isException"><a class="nav__itemsLink" href="work.html">Travaux</a></li>
+                <li class="nav__items"><a class="nav__itemsLink" href="#skills">Compétences</a></li>
+                <li class="nav__items"><a class="nav__itemsLink" href="#experience">Expériences</a></li>
+                <li class="nav__items nav__items--isException"><a class="nav__itemsLink" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section class="header__mainDescriptionContainer">
+            <h1 class="title--principal"><span class="color__red">B</span>ienvenue</h1>
+            <p class="header__mainDescriptionItem">Etudiant à l’Ecole Européenne des Métiers de l’Internet (EEMI) en spécialisation “Interactive Design”, je m’intéresse tout particulièrement au web et à ses applications.<br/>Je suis actuellement à la recherche d’un stage de fin de Bachelor d’une durée de 6 mois (04 Mars - Aout 2019) en tant qu'UX designer.</p>
+            <a target="_blank" href="http://dregnault.eemi.tech/CV_David_Regnault.jpg" class="btn btn--principal">Voir mon cv</a>
+        </section>
+    </header>
+
+    <main class="portfolio__main">
+
+        <section id="work" class="section work" >
+            <h2 class="title--secondary"><span class="color__red">T</span>ravaux</h2>
+            <div class="work__container">
+                <img class="work__img" src="src/img/img_work.png">
+                <div class="work__containerDescription">
+                    <div class="title--third">Adopte un bénévole</div>
+                    <p class="work__descriptionLastWork">"Adpote un bénévole" est un projet penser durant un hackaton réalisé par l'EEMI et des entreprises partenaires.<br/>Ce projet à pour but d'être le "Linkedin Job" des associations. Des associations pourraient donc poster leurs annonces sur notre plateforme. De l'autre coté des personnes qualifié pourrait postuler à ses annonces.</p>
+                </div>
+            </div>
+            <a href="/work.html" class="btn btn--secondary">Voir tout mes travaux</a>
+        </section>
+
+        <section class="section skills" id="skills">
+            <h2 class="title--secondary skills__title"><span class="color__red">C</span>ompétences</h2>
+            <div class="skills__section">
+                <div class="skills__container skills__container--isImg desktopOnly">
+                    <img src="./src/img/img1.png" alt="" class="skills__img skills__img--isOne">
+                    <img src="./src/img/img2.png" alt="" class="skills__img skills__img--isTwo">
+                    <img src="./src/img/img3.png" alt="" class="skills__img skills__img--isThree">
+                    <img src="./src/img/img4.png" alt="" class="skills__img skills__img--isFour">
+                </div>
+                <div class="skills__container skills__container--isItems">
+                    <div class="skills__containerSecond">
+                        <div class="skills__items" id="skillsItem1">Intégration</div>
+                        <div class="skills__items" id="skillsItem2">Interractive Design</div>
+                    </div>
+                    <div class="skills__containerSecond">
+                        <div class="skills__items" id="skillsItem3">Logiciels</div>
+                        <div class="skills__items" id="skillsItem4">Soft Skills</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section experience" id="experience">
+                <h2 class="title--secondary experience__title"><span class="color__red">E</span>xpériences <span class="title__secondary--isSmall">et</span> <span class="color__red">F</span>ormations</h2>
+                <div class="experience__container">
+                    <span class="experience__line" id="experienceLine"></span>
+                    <div class="experience__itemsContainer experience__itemsContainer--isRight">
+                        <div class="experience__items"></div>
+                        <div class="experience__items">
+                            <div class="experience__point experience__point--isLeft"><img src="./src/img/red-point.png" alt="" class="experience__pointImg"></div> 
+                            <div class="experience__containerTitle">
+                                <p class="experience__localisation">EEMI</p>
+                                <p class="experience__date">2016 - 2019</p>
+                            </div>
+                            <p class="experience__poste">Bachelor Interractive Design</p>
+                            <p class="experience__description">Actuellement en troisième année à l’EEMI où je réalise mon bachelor chef de projet digital et où je suis spécialisé en interactive design.  Avec une formation complémentaire en marketing et en développement, j’ai une approche multiple lors de projets et ne reste pas focalisé sur ma vision de Webdesigner.</p>
+                        </div>
+                    </div>
+                    <div class="experience__itemsContainer experience__itemsContainer--isLeft">
+                        <div class="experience__items"></div>
+                        <div class="experience__items">
+                            <div class="experience__point experience__point--isRight"><img src="./src/img/red-point.png" alt="" class="experience__pointImg"></div> 
+                            <div class="experience__containerTitle experience__containerTitle--isLeft">
+                                <p class="experience__localisation">Lycée Santos Dumont</p>
+                                <p class="experience__date">2014 - 2016</p>
+                            </div>
+                            <p class="experience__poste">Baccalauréat professionnel commerce</p>
+                            <p class="experience__description">Obtention du baccalauréat professionnel avec comme spécialisation le commerce et option européenne. Les connaissances que j’ai acquises ainsi que les différents stages que j’ai réalisés m’ont permis de développer mon sens de l’autonomie, de la vente, de la relation avec la clientèle ainsi que de m’habituer au travail en équipe.</p>
+                            </div>
+                        </div>
+                    <div class="experience__itemsContainer experience__itemsContainer--isRight">
+                        <div class="experience__items"></div>
+                        <div class="experience__items">
+                            <div class="experience__point experience__point--isLeft"><img src="./src/img/red-point.png" alt="" class="experience__pointImg"></div> 
+                            <div class="experience__containerTitle">
+                                <p class="experience__localisation">Collège les Bons Raisins</p>
+                                <p class="experience__date">2012</p>
+                            </div>
+                            <p class="experience__poste">Brevet des collèges</p>
+                            <p class="experience__description"></p>
+                            </div>
+                        </div>
+                    
+                </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <h2 class="title--secondary"><span class="color__red">C</span>ontact</h2>
+            <div class="contact__container">
+                <div class="contact__containerDesc">
+                    <p class="contact__desc">N'hésitez pas à me contacter via l'un de mes e-mails ou par message sur Linkedin !</p>
+                    <p class="contact__mail">david1regnault@wanadoo.fr</p>
+                    <p class="contact__mail">david.regnault@eemi.com</p>
+                </div> 
+                <div class="contact__sectionLinkedin">
+                    <div class="contact__linkedinBandeau"></div>
+                    <img src="./src/img/img_profile.jpeg" alt="" class="contact__linkedinImg">
+                    <p class="contact__linkedinTitre"><span class="color__red">D</span>avid Regnault</p>
+                    <p class="contact__descriptionLinkedin">Mon Linkedin</p>
+                    <a class="contact__linkedinLink" target="_blank" href="https://www.linkedin.com/in/david-regnault-2284b1128/"></a>
+                </div>
+            </div>
+        </section>
+    
+
+
+    </main>
+    
+    <script src="./src/index.js"></script>
+    <script src="./src/script/animTxtSkills.js"></script>
+    <script src="./src/script/animImgSkills.js"></script>
+    <script src="./src/script/ancre.js"></script>
+</body>
+</html>

@@ -1,0 +1,850 @@
+@import "./variables";
+@import "./bp";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    font-size: 100%;
+    z-index: default;
+	font: inherit;
+    vertical-align: baseline;
+}
+body {
+    background-color: $backgroundPincipal;
+    color: white;
+    font-family: $fontTxt;
+}
+
+.section {
+    width: $mobileSpace;
+    margin: auto;
+    margin-top: 20px;
+    @include tablet {
+        width: $tabletSpace;
+    }
+}
+.portfolio {
+    margin: auto;
+    &__header {
+        height: 90vh;
+        margin: auto;
+        @include tablet {
+            width: $tabletSpace;
+            height: 93vh;
+            display: flex;
+            align-items: center;
+        }
+        @include desktop {
+            width: calc(100% - 200px);
+        }
+    }
+}
+.title {
+    &--principal {
+        font-family: $fontTitle;
+        font-weight: bold;
+        font-size: 2em;
+        text-align: center;
+        @include tablet {
+            font-size: 2em;
+        }
+        @include desktop {
+            font-size: 2.8em;
+        }
+    }
+    &--secondary {
+        font-family: $fontTitle;
+        font-weight: bold;
+        font-size: 1.8em;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 25px;
+        @include tablet {
+            margin-top: 5px;
+        }
+        @include desktop {
+            font-size: 2.2em;
+        }
+    }
+    &--third {
+        font-family: $fontTitle;
+        font-weight: normal;
+        font-size: 1.4em;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+}
+.color {
+    &__red {
+        color: $titleRed;
+    }
+}
+.btn {
+    padding: 70px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: fit-content;
+    text-align: center;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: $titleRed;
+        border-color: $titleRed;
+    }
+    &--principal {
+        margin-top: 15%;
+        @include desktop {
+            margin-top: 5%;
+        }
+    }
+    &--secondary {
+        margin: auto;
+    }
+    &__forWorkPage {
+        margin: auto;
+        @include desktop {
+        margin: initial;
+    }
+    }
+    &__forWorks {
+        color: white;
+        opacity: 0;
+        z-index: 3;
+        &:hover {
+            padding: 74px;
+            padding-top: 17px;
+            padding-bottom: 17px;
+            font-size: 1.1em;
+            transition: all 0.4s;
+        }
+    }
+}
+.header {
+    &__mainDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90%;
+        width: $mobileSpace;
+        margin: auto;
+        @include tablet {
+            justify-content: center;
+        }
+        @include desktop {
+            margin-top: 5%;
+        }
+    }
+    &__logoContainer {
+        width: 30%;
+        margin: auto;
+        padding-top: 10%;
+        display: flex;
+        justify-content: center;
+        @include tablet {
+            position: fixed;
+            left: 20px;
+            top: 2%;
+            width: 50px;
+            padding: 0;
+        }
+    }
+    &__logoItem {
+        max-width: 100%;
+        
+    }
+    &__mainDescriptionItem {
+        padding-top: 8%;
+        line-height: 1.6em;
+        @include tablet {
+            font-size: 1.3em;
+            width: 70%;
+            margin-top: 0%;
+            text-align: center;
+        }
+        @include desktop {
+            margin-top: 0;
+            padding-top: 3%;
+            padding-bottom: 3%;
+        }        
+    }
+}
+.nav {
+    background-color: $backgroundPincipal;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 8%;
+    position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 10%;
+        margin: auto;
+    }
+    @include desktop {
+        width:calc(100% - 100px);
+    }  
+    &__logo {
+        width: 30%;
+        margin-left: 10px;
+    }
+    &__logoLink {
+        width: 100%;
+        height: 100%;
+    }
+    &__logoItem {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &__container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet {
+            width: 60%;
+        }  
+        @include desktop {
+            width: 40%;
+        }
+    }
+    &__items {
+        display: none;
+        @include tablet {
+        display: initial;
+        width: initial;
+        list-style-type: none;
+        font-weight: bold;
+        font-family: $fontTitle;
+        }
+        &--isException {
+            display: initial;
+            margin-right: 10px;
+        }
+    }
+    &__itemsLink {
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+            color: $titleRed;
+            border-color: $titleRed;
+        }
+    }
+}
+
+.work {
+    @include tablet {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include desktop {
+        height: 85vh;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            margin-top: 60px;
+        }
+    }
+
+    &__img {
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        @include tablet {
+            max-width: 45%;
+            margin: initial;
+        }
+        @include desktop {
+            max-width: 40%;
+        }
+    }
+    &__containerDescription {
+        @include tablet {
+            max-width: 45%;
+        }
+        @include desktop {
+            max-width: 40%;
+        }
+    }
+    &__descriptionLastWork {
+        margin-bottom: 20px;
+        line-height: 1.5em;
+    }
+}
+
+.skills {
+    height: 60vh;
+    margin-top: 60px;
+    @include desktop {
+        height: 90vh;
+    }
+    &__title {
+    }
+    &__section  {
+        height: 90%;
+        margin-top: 70px;
+        @include desktop {
+            margin-top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    &__container {
+        height: 40%;
+        @include desktop {
+            width: 40%;
+            height: 55%;
+        }
+        &--isItems {
+            @include desktop {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            }
+        }
+        &--isImg {
+            @include desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            }
+        }
+    }
+    &__img {
+        max-height: calc(100% - 6px);
+        border-radius: 8px;
+        &--isOne {
+            display: initial;
+            z-index: 1;
+        }
+        &--isTwo {
+            display: none;
+            z-index: 4;
+        }
+        &--isThree {
+            display: none;
+            z-index: 4;
+        }
+        &--isFour {
+            display: none;
+            z-index: 4;
+        }
+    }
+    &__containerSecond {
+        display: flex;
+        justify-content: space-between;
+        height: 50%;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+    &__items {
+        width: calc(50% - 16px);
+        height: 100%;
+        background: $backgroundPincipal;
+        border: 3px solid white;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.6em;
+    }
+}
+
+.experience {
+    margin-top: 60px;
+    &__title {
+        margin-bottom: 50px;
+        @include desktop {
+            margin-bottom: 100px;
+        }
+    }
+    &__container {
+        position: relative;
+    }
+    &__point {
+        display: none;
+        position: absolute;
+        top: 0px;
+        &--isLeft {
+            left: -87px;
+        }
+        &--isRight {
+            right: -87px;
+        }
+        @include desktop {
+            display: initial;
+        }
+    }
+    &__pointImg {
+        width: 15px;
+    }
+    &__line {
+        display: none;
+        @include desktop {
+            display: initial;
+            width: 3px;
+            height: 100%;
+            background-color: $titleRed;
+            position: absolute;
+            top: 0;
+            left: calc(50% - 1px);
+        }
+    }
+    
+    &__itemsContainer {
+        margin-bottom: 40px;
+        @include desktop {
+            width: calc(100% - 200px);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        &--isLeft {
+            @include desktop {
+                flex-direction: row-reverse;
+                text-align: right;
+            }
+        }
+        &--isRight {
+            @include desktop {
+                flex-direction: row;
+            }
+        }
+    }
+    &__items {
+        position: relative;
+        @include desktop {
+            width: calc(50% - 80px);
+        }
+        
+    }
+    &__containerTitle {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        @include desktop {
+            flex-direction: column-reverse;
+        }
+        &--isLeft {
+            @include desktop {
+                flex-direction: column-reverse;
+            }
+            
+        }
+    }
+    &__localisation {
+        font-weight: bold;
+        font-size: 1.3em;
+        @include desktop {
+            margin-bottom: 7px;
+        }
+    }
+    &__date {
+        color: $titleRed;
+    }
+    &__poste {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+    &__description {
+        font-size: 0.9em;
+        line-height: 1.5em;
+    }
+}
+
+.contact {
+    margin-top: 75px;
+    margin-bottom: 30px;
+    @include desktop {
+        height: 70vh;
+        margin-top: 100px;
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include desktop {
+            height: 90%;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    }
+    &__desc {
+        margin-bottom: 30px;
+    }
+    &__mail {
+        margin-top: 10px;
+    }
+    &__containerDesc {
+        line-height: 1.5em;
+        @include desktop {
+            width: 40%;
+        }
+    }
+    &__sectionLinkedin {
+        margin: auto;
+        margin-top: 30px;
+        width: 100%;
+        height: 200px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 2px $backgroundPincipal solid;
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 30%;
+            height: 250px;
+            margin: initial;
+            transition: all 0.5s;
+            &:hover {
+                border: 2px $titleRed solid;
+                transition: all 0.5s;
+            }
+        }
+    }
+    &__linkedinBandeau {
+        height: 60px;
+        width: 100%;
+        background-image: url(../img/bg_bandeau_linkedin.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 120%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    &__linkedinImg {
+        width: 71px;
+        height: 71px;
+        border-radius: 100px;
+        position: absolute;
+        left: calc(50% - 40px);
+        top: 25px;
+    }
+    &__linkedinTitre {
+        color: $backgroundPincipal;
+        margin-top: 70px;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+    &__descriptionLinkedin {
+        color: $backgroundPincipal;
+    }
+    &__linkedinLink {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* PAGE TRAVAUX */
+.workPageNav {
+    background-color: $backgroundPincipal;
+    z-index: 10;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    @include tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 100px);
+        padding-left: 50px;
+        padding-right: 50px;
+        height: 10%;
+        margin: auto;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+    @include desktop {
+        width:calc(100% - 100px);
+    }  
+    &__logoLink {
+        width: 100%;
+        height: 100%;
+    }
+    &__logoItem {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    &__container {
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include tablet {
+            width: 60%;
+        }  
+        @include desktop {
+            width: 40%;
+        }
+    }
+    &__items {
+        width: initial;
+        list-style-type: none;
+        font-weight: bold;
+        font-family: $fontTitle;
+        margin-left: 10px;
+        
+    }
+    &__itemsLink {
+        color: white;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        cursor: pointer;
+        &:hover {
+            color: $titleRed;
+            border-color: $titleRed;
+        }
+    }
+}
+.workPage {
+    margin-top: 40px;
+    
+    &__header {
+        margin: auto;
+        margin-top: 70px;
+        width: $mobileSpace;
+        @include desktop {
+            height: 90vh;
+            margin-top: 10vh;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: column;
+        &--isReverse {
+            display: flex;
+            flex-direction: column;
+        }
+        @include tablet {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            &--isReverse {
+                flex-direction: row-reverse;
+                align-items: flex-start;
+                justify-content: space-around;
+                margin-bottom: 100px;
+            }
+    
+        }
+        @include desktop {
+            margin-top: 80px;
+        }
+        
+    }
+    &__img {
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        @include tablet {
+            max-width: 45%;
+            margin: initial;
+        }
+        @include desktop {
+            max-width: 40%;
+        }
+    }
+    &__containerDescription {
+        line-height: 1.5em;
+        @include tablet {
+            max-width: 45%;
+        }
+        @include desktop {
+            max-width: 40%;
+        }
+    }
+    &__descriptionLastWork {
+        margin-bottom: 40px;
+        @include desktop {
+            margin-bottom: 40px;
+            margin-top: 30px;
+            line-height: 1.5em;
+        }
+    }
+
+    &__containerWorks {
+        margin: auto;
+        margin-top: 40px;
+        width: $mobileSpace;
+        @include desktop {
+        width: 100%;
+        margin-top: -5vh;
+        height: 60vh;
+        }
+    }
+
+    &__secondContainerWorks {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        }
+    }
+    &__containerWorksItems {
+        @include desktop {
+        width: calc(100% / 3);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        }
+
+    }
+    &__imgForWorks {
+        max-width: 100%;
+        @include desktop {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        }
+    }
+    &__hoverForWorks {
+        @include desktop {
+        z-index: 2;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        }
+    }
+    &__linkWorks {
+        width: 100%;
+        height: 100%;
+        @include desktop {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+            }
+            &:hover {
+                background-color: rgba($color: #000000, $alpha: 0.5);
+                .btn__forWorks {
+                    opacity: 1;
+                    color: white;
+                    border-color: white;
+                }
+                .workPage__hoverForWorks {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+ 
+
+.desktopOnly {
+    display: none;
+    @include tablet {
+        display: none;
+    }
+    @include desktop {
+        display: flex;
+    }
+}
+.desktopAndTabletOnly {
+    display: none;
+    @include tablet {
+        display: initial;
+    }
+    @include desktop {
+        display: initial;
+    }
+}
+.mobileOnly {
+    display: flex;
+    @include tablet {
+        display: none;
+    }
+    @include desktop {
+        display: none;
+    }
+}
